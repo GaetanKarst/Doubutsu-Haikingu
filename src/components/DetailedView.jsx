@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react';
 import PhotoDetails from './PhotoDetails';
 
 export default function DetailedView({ selectedPicture, setCurrentView }) {
-    const [details, setPhotoDetails] = 
-    useState({species: '', type: '', description: '', location: '', comments: '' });
+    const [details, setPhotoDetails] = useState({});
 
     useEffect(() => {
         console.log(details)

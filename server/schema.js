@@ -11,16 +11,19 @@ type species {
     comments: String
 }
 
+type customSpecies: {
+    animals: species
+    status: int
+}
+
 type Query {
     Species(species: String): species
-    Type: String
-    Description: String
-    Location: String
-    Comments: String
 }
 
 type Mutation {
     getSpecies(species: String!): String
+    addAnimal(name: String, type: String, description: String, 
+    location: String, comments: String): customSpecies
 }
 `;
 

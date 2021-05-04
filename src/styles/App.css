@@ -1,19 +1,51 @@
+.camera {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: rgb(42, 221, 42);
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
 #camera-icon {
   margin: auto;
-  padding-left: 40%;
 }
-.collection-list{
+
+h1.app-title {
+  margin: auto;
+}
+
+.collection-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-rows: 250px;
-  gap: 10px 10px; 
+  gap: 1em;
+  padding: 1em;
+}
+
+.collection-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .picture-of-animal {
   width: min(100%, 250px);
-  height: 100%;
+  height: auto;
 }
 
 .selected-picture {
   width: 100%;
+}
+
+.back-button {
+  background-color: orange;
+}
+
+.picture-of-animal:hover {
+  transform: scale(1.1);
+  border: brown solid 0.4em;
 }

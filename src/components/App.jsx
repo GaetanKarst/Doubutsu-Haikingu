@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/App.css';
 import Camera from './Camera';
 import Collection from './Collection';
@@ -10,7 +10,7 @@ export default function App() {
   const [currentView, setCurrentView] = useState('Collection');
   const [selectedPicture, setSelectedPicture] = useState('')
 
-  function addTakenPictureFile(pictureFile){
+  function addTakenPictureFile(pictureFile) {
     // setTakenPictureFile([...takenPictureFile, [...pictureFile]]);
     setTakenPictureFile(takenPictureFile.concat(pictureFile));
     console.log(takenPictureFile)
@@ -25,17 +25,20 @@ export default function App() {
   return (
     <>
       <div className="App">
-        <h1 id="app-title">Doubutsu Hikingu</h1>
-      </div>
+        <header>
+          <h1 id="app-title">Doubutsu Haikingu</h1>
+        </header>
+          <div className="camera">
 
-      <Camera addTakenPictureFile={addTakenPictureFile} selectedImage={selectedImage}/>
-
-      {currentView === 'Collection' ? 
-      <Collection takenPictureFile={takenPictureFile} selectedImage={selectedImage}/> :
-      <DetailedView selectedPicture={selectedPicture} setCurrentView={setCurrentView}/>
-      }
-      
-      
+            <Camera addTakenPictureFile={addTakenPictureFile} selectedImage={selectedImage} />
+          </div>
+          <div className="collection-wrapper">
+          {currentView === 'Collection' ?
+            <Collection takenPictureFile={takenPictureFile} selectedImage={selectedImage} /> :
+            <DetailedView selectedPicture={selectedPicture} setCurrentView={setCurrentView} />
+          }
+          </div>
+        </div>
     </>
   );
 }

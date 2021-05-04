@@ -23,8 +23,7 @@ export default function Camera(props) {
     }
 
     return (
-        <div className="App">
-            <h1>Camera</h1>
+        <div className="camera-container">
             <Grid container>
                 <Box>
                     <input type="file"

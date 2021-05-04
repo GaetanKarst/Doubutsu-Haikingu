@@ -1,28 +1,30 @@
 import React from 'react';
 
-export default function PhotoDetails({ details, setPhotoDetails }) {
+export default function PhotoDetails({ setPhotoDetails }) {
 
     function createInputField() {
-        console.log(details)
-        for (let key in details) {
-            return (<input
+        let keys = ['Species', 'Type', 'Description', 'Location', 'Comments'];
+        return keys.map((key) => {
+            return <input
                 type="text"
                 placeholder={key}
                 onKeyDown={(e) => {
-                    if(e === 'Enter'){
+                    if (e.key === 'Enter') {
                         //TODO: FIX the object passed
-                        setPhotoDetails({species: e.target.value})
+                        setPhotoDetails({ [key]: e.target.value });
+                        // e.target.value = ''; 
                     }
                 }} />
-            )
-        }
+        })
+            
+
     }
 
     return (
         <>
-        <div className="selected-picture-details">
-            {createInputField()}
-        </div>
+            <div className="selected-picture-details">
+                {createInputField()}
+            </div>
         </>
     )
 }
