@@ -14,7 +14,7 @@ export default function Camera(props) {
 
     function getShot(event) {
         try{
-            props.addTakenPicture(event.target.files[0]);
+            props.addTakenPictureFile(event.target.files[0]);
             console.log('Picture taken!')
         }
         catch(e) {

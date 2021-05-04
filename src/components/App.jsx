@@ -2,18 +2,21 @@ import React, {useState, useEffect} from 'react';
 import '../styles/App.css';
 import Camera from './Camera';
 import Collection from './Collection';
+import DetailedView from './DetailedView';
 
 
 export default function App() {
-  const [takenPicture, setTakenPicture] = useState([]);
+  const [takenPictureFile, setTakenPictureFile] = useState([]);
+  const [currentView, setCurrentView] = useState('Collection');
 
-  useEffect(() => {
-    
-  }, [takenPicture])
+  function addTakenPictureFile(pictureFile){
+    // setTakenPictureFile([...takenPictureFile, [...pictureFile]]);
+    setTakenPictureFile(takenPictureFile.concat(pictureFile));
+    console.log(takenPictureFile)
+  }
 
-  function addTakenPicture(event){
-    setTakenPicture(takenPicture.concat(event));
-    console.log(takenPicture)
+  function selectedImage() {
+    setCurrentView('detailedView');
   }
 
   return (
@@ -22,9 +25,13 @@ export default function App() {
         <h1 id="app-title">Doubutsu Hikingu</h1>
       </div>
 
-      <Camera addTakenPicture={addTakenPicture}/>
+      <Camera addTakenPictureFile={addTakenPictureFile} selectedImage={selectedImage}/>
 
-      <Collection pictures={takenPicture}/>
+      {currentView === 'Collection' ? 
+      <Collection takenPictureFile={takenPictureFile}/> :
+      <detailedView />
+      }
+      
       
     </>
   );

@@ -1,39 +1,48 @@
-import React from 'react';
-import FileReader from 'filereader'
+import React, { useEffect, useState } from 'react';
 
 
 
-export default function Collection({ pictures }) {
 
-function getBase64(link){
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(link);
-        reader.onloadend = () => resolve(reader.result);
-    })
-}
+export default function Collection({ takenPictureFile, selectedImage }) {
+    const [base64s, setBase64s] = useState([]);
+
+    useEffect(() =>{
+        console.log(takenPictureFile)
+        Promise.all(takenPictureFile.map( async(file) => {
+            const test = await getBase64(file);
+            return test;
+         })).then(data => setBase64s(data));
+
+        // setBase64s(Promise.all(stringPromises));
+    }, [takenPictureFile]); 
+
+    function getBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+                resolve(reader.result);
+            };
+        });
+    }
+
+    function renderPictures() {
+        return base64s.map((photo, index) => {
+            return <img
+                src={`data:image/jpeg;${photo}`}
+                key={index}
+                className="picture-of-animal"
+                alt="picture of animal" 
+                onClick={selectedImage}
+                />
+        });
+    }
 
 
-    if (pictures.length > 0) {
-        return (
-            <div id="collection-grid">
-                {pictures.map((photo, index) => {
-                    const base64 = getBase64(photo)
-                    .then((data) => data);
-                    console.log(base64);
-
-                    <img
-                        src={`data:image/jpg;base64,${base64}`}
-                        key={index}
-                        alt="picture of animal" />
-                        console.log(`data:image/jpg;base64, ${photo}`)
-                }
-                )}
+    
+   return (
+            <div id="collection-list">
+                {renderPictures()}
             </div>
-        );
+        )
     }
-    else { 
-        return(<h2 id="empty-collection">Your collection is empty,
-    go on a hike when you have time!</h2>)
-    }
-}
