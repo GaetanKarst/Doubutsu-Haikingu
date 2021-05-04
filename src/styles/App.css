@@ -13,3 +13,7 @@
   width: min(100%, 250px);
   height: 100%;
 }
+
+.selected-picture {
+  width: 100%;
+}

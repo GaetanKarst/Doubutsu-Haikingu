@@ -38,8 +38,6 @@ export default function Collection({ takenPictureFile, selectedImage }) {
         });
     }
 
-
-    
    return (
             <div id="collection-list">
                 {renderPictures()}

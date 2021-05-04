@@ -8,6 +8,7 @@ import DetailedView from './DetailedView';
 export default function App() {
   const [takenPictureFile, setTakenPictureFile] = useState([]);
   const [currentView, setCurrentView] = useState('Collection');
+  const [selectedPicture, setSelectedPicture] = useState('')
 
   function addTakenPictureFile(pictureFile){
     // setTakenPictureFile([...takenPictureFile, [...pictureFile]]);
@@ -15,7 +16,9 @@ export default function App() {
     console.log(takenPictureFile)
   }
 
-  function selectedImage() {
+  function selectedImage(picture) {
+    console.log(picture.target);
+    setSelectedPicture(picture.target.src);
     setCurrentView('detailedView');
   }
 
@@ -28,8 +31,8 @@ export default function App() {
       <Camera addTakenPictureFile={addTakenPictureFile} selectedImage={selectedImage}/>
 
       {currentView === 'Collection' ? 
-      <Collection takenPictureFile={takenPictureFile}/> :
-      <detailedView />
+      <Collection takenPictureFile={takenPictureFile} selectedImage={selectedImage}/> :
+      <DetailedView selectedPicture={selectedPicture} setCurrentView={setCurrentView}/>
       }
       
       
