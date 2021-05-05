@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 
-
-
 export default function Collection({ takenPictureFile, selectedImage }) {
     const [base64s, setBase64s] = useState([]);
 
