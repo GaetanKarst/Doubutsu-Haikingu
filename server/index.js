@@ -1,10 +1,14 @@
 require("dotenv").config();
-const { ApolloServer } = require("apollo-server");
-const typeDefs = require("./schema");
-const resolver = require("./resolver");
+// const { ApolloServer } = require("apollo-server");
+// const typeDefs = require("./schema");
+// const resolver = require("./resolver");
 const db = require('../knexfile');
+const express = require('express');
+const server = express();
 
-const server = new ApolloServer({ typeDefs, resolver });
+server.use("/", express.static("build"));
+
+// const server = new ApolloServer({ typeDefs, resolver });
 
 const PORT = process.env.PORT || 4000;
 
