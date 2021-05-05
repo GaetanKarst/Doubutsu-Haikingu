@@ -29,6 +29,7 @@ h1.app-title {
 
 .collection-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -42,10 +43,16 @@ h1.app-title {
 }
 
 .back-button {
-  background-color: orange;
+  background-color: rgb(173, 96, 96);
+  font-weight: bold;
 }
 
 .picture-of-animal:hover {
   transform: scale(1.1);
   border: brown solid 0.4em;
+}
+
+.back-button {
+  width: 15em;
+  border-radius: 10%;
 }

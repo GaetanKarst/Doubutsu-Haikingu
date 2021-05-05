@@ -3,7 +3,7 @@ import React from 'react';
 export default function PhotoDetails({ setPhotoDetails }) {
 
     function createInputField() {
-        let keys = ['Species', 'Type', 'Description', 'Location', 'Comments'];
+        let keys = ['species', 'sype', 'description', 'location', 'Comments'];
         return keys.map((key) => {
             return <input
                 type="text"
@@ -12,7 +12,6 @@ export default function PhotoDetails({ setPhotoDetails }) {
                     if (e.key === 'Enter') {
                         //TODO: FIX the object passed
                         setPhotoDetails({ [key]: e.target.value });
-                        // e.target.value = ''; 
                     }
                 }} />
         })

@@ -1,18 +1,15 @@
-const db = require('../knexfile');
+const db = require("../knexfile");
 
 module.exports = {
-    Query: {
-        Species: (species) => {
-            db.select()
-            .from('animals')
-            .where('species', species);
-        }
-
-        
+  Query: {
+    Species: (species) => {
+      db.select().from("animals").where("species", species);
     },
+  },
 
-    Mutation: {
+  Mutation: {
+    getSpecies: () => {},
 
-    }
-
-}
+    addAnimal: () => {},
+  },
+};

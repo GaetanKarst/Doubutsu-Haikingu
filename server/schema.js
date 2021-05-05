@@ -3,7 +3,7 @@ const { gql } = require("apollo-server");
 const typeDefs = gql`
 
 type species {
-    id: String
+    id: ID!
     name: String
     type: String
     description: String
@@ -11,9 +11,9 @@ type species {
     comments: String
 }
 
-type customSpecies: {
+type customSpecies {
     animals: species
-    status: int
+    status: Int
 }
 
 type Query {
@@ -22,8 +22,7 @@ type Query {
 
 type Mutation {
     getSpecies(species: String!): String
-    addAnimal(name: String, type: String, description: String, 
-    location: String, comments: String): customSpecies
+    addAnimal(name: String, type: String, description: String, location: String, comments: String): customSpecies
 }
 `;
 
