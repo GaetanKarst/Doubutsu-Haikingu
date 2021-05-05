@@ -7,11 +7,8 @@ const express = require('express')
 const path = require('path');
 
 const server = express();
-if (__dirname.slice(-6) === '/build') { 
-  server.use(express.static(__dirname))
-} else { 
-  server.use(express.static('build'))
-}
+server.use(express.static(path.join(__dirname, "build")));
+ 
 
 // const server = new ApolloServer({ typeDefs, resolver });
 
