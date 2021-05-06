@@ -45,7 +45,7 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
-    "start": "node ./server/index.js",
+    "start": "node index.js",
     "build": "react-scripts build",
     "hack:client": "react-scripts start",
     "test": "react-scripts test",
