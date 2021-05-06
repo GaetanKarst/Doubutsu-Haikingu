@@ -33,6 +33,11 @@ h1.app-title {
   justify-content: center;
 }
 
+.collection-empty {
+  display: flex;
+  justify-content: center;
+}
+
 .picture-of-animal {
   width: min(100%, 250px);
   height: auto;

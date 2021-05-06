@@ -26,19 +26,20 @@ export default function App() {
     <>
       <div className="App">
         <header>
-          <h1 id="app-title">Doubutsu Haikingu</h1>
+          <h1 id="app-title">🦉 Doubutsu Haikingu</h1>
         </header>
-          <div className="camera">
+        <div className="camera">
 
-            <Camera addTakenPictureFile={addTakenPictureFile} selectedImage={selectedImage} />
-          </div>
-          <div className="collection-wrapper">
+          <Camera addTakenPictureFile={addTakenPictureFile} selectedImage={selectedImage} />
+        </div>
+        <div className="collection-wrapper">
           {currentView === 'Collection' ?
-            <Collection takenPictureFile={takenPictureFile} selectedImage={selectedImage} /> :
+            takenPictureFile.length <= 0 ? <h2 className="collection-empty">🐺 Your collection is empty! Go on a hike! 🐻</h2> :
+              <Collection takenPictureFile={takenPictureFile} selectedImage={selectedImage} /> :
             <DetailedView selectedPicture={selectedPicture} setCurrentView={setCurrentView} />
           }
-          </div>
         </div>
+      </div>
     </>
   );
 }

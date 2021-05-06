@@ -35,10 +35,9 @@ export default function Collection({ takenPictureFile, selectedImage }) {
                 />
         });
     }
-
-   return (
+       return (
             <div id="collection-list">
                 {renderPictures()}
             </div>
-        )
+        ) 
     }
