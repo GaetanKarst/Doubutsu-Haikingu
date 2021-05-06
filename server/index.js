@@ -11,7 +11,7 @@ server.use(express.static(path.join(__dirname, '../build')));
  
 // const server = new ApolloServer({ typeDefs, resolver });
 server.get('*', function (req, res) {
-    res.sendFile(path.resolve(__dirname, '../build/index.html'))
+    res.sendFile(path.resolve(__dirname, '../build', '../build/index.html'))
 })
 
 const PORT = process.env.PORT || 4000;
