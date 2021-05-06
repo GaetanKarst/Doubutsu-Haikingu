@@ -45,7 +45,7 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "nodemon ./server/index.js",
     "build": "react-scripts build",
     "hack:server": "nodemon ./server/index.js",
     "test": "react-scripts test",
