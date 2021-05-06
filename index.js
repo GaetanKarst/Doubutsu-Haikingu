@@ -2,16 +2,16 @@ require("dotenv").config();
 // const { ApolloServer } = require("apollo-server");
 // const typeDefs = require("./schema");
 // const resolver = require("./resolver");
-const db = require('../knexfile');
+const db = require('./knexfile');
 const express = require('express')
 const path = require('path');
 
 const server = express();
-server.use(express.static(path.join(__dirname, '../build')));
+server.use(express.static(path.join(__dirname, 'build')));
  
 // const server = new ApolloServer({ typeDefs, resolver });
 server.get('*', function (req, res) {
-    res.sendFile(path.resolve(__dirname, '../build', '../favicon.ico'))
+    res.sendFile(path.resolve(__dirname, 'build', 'favicon.ico'))
 })
 
 const PORT = process.env.PORT || 4000;
