@@ -7,7 +7,7 @@ const express = require('express')
 const path = require('path');
 
 const server = express();
-server.use(express.static("/", path.join(__dirname, '../build')));
+server.use(express.static(path.join(__dirname, '../build')));
  
 // const server = new ApolloServer({ typeDefs, resolver });
 server.get('*', function (req, res) {
