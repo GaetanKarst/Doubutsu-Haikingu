@@ -5,6 +5,7 @@ require("dotenv").config();
 const db = require('../knexfile');
 const express = require('express')
 const path = require('path');
+const cors = require('cors')
 
 const server = express();
 server.use(express.static(path.join(__dirname, '../build')));
