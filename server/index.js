@@ -8,6 +8,7 @@ const path = require('path');
 
 const server = express();
 server.use(express.static(path.join(__dirname, '../build')));
+server.use(cors());
  
 // const server = new ApolloServer({ typeDefs, resolver });
 server.get('*', function (req, res) {
