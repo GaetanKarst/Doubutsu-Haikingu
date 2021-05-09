@@ -10,6 +10,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "apollo-server": "^2.24.0",
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "eslint": "^7.25.0",
@@ -46,11 +47,13 @@
   },
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "build": "react-scripts build",
     "hack:client": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "https://localhost:4000",
   "eslintConfig": {
     "extends": [
       "react-app",

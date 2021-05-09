@@ -1,13 +1,9 @@
 import { PinDropSharp } from '@material-ui/icons';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PhotoDetails from './PhotoDetails';
 
 export default function DetailedView({ selectedPicture, setCurrentView }) {
-    const [details, setPhotoDetails] = useState({});
-
-    useEffect(() => {
-        console.log(details)
-    }, [details])
+    
 
     function displayPicture() {
         return (
@@ -35,7 +31,7 @@ export default function DetailedView({ selectedPicture, setCurrentView }) {
             <div id="selected-picture-container">
                 {displayPicture()}
             </div>
-                <PhotoDetails details={details} setPhotoDetails={setPhotoDetails}/>
+                <PhotoDetails displayPicture={displayPicture}/>
 
             <div className="button-container">
                 <button>Share</button>

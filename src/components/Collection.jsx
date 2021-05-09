@@ -5,7 +5,6 @@ export default function Collection({ takenPictureFile, selectedImage }) {
     const [base64s, setBase64s] = useState([]);
 
     useEffect(() =>{
-        console.log(takenPictureFile)
         Promise.all(takenPictureFile.map( async(file) => {
             const test = await getBase64(file);
             return test;

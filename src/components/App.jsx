@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/App.css';
 import Camera from './Camera';
 import Collection from './Collection';
 import DetailedView from './DetailedView';
+import axios from 'axios';
 
 
 export default function App() {
   const [takenPictureFile, setTakenPictureFile] = useState([]);
   const [currentView, setCurrentView] = useState('Collection');
-  const [selectedPicture, setSelectedPicture] = useState('')
+  const [selectedPicture, setSelectedPicture] = useState('');
+  const [test, setTest] = useState({});
+
+  useEffect(() => {
+    testAxios();
+  }, [])
 
   function addTakenPictureFile(pictureFile) {
     // setTakenPictureFile([...takenPictureFile, [...pictureFile]]);
@@ -16,8 +22,18 @@ export default function App() {
     console.log(takenPictureFile)
   }
 
+  async function testAxios() {
+    try {
+      const res = await axios.get('/api')
+      setTest(res.data);
+    }
+    catch (e) {
+      console.error('Error', e);
+    }
+  };
+  console.log('test is', test)
+
   function selectedImage(picture) {
-    console.log(picture.target);
     setSelectedPicture(picture.target.src);
     setCurrentView('detailedView');
   }

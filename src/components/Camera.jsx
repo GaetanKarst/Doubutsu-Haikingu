@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import { IconButton } from '@material-ui/core';
 import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";
+import axios from 'axios'
 
 
 export default function Camera(props) {

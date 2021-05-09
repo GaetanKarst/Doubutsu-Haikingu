@@ -14,22 +14,27 @@ server.get('*', function (req, res) {
     res.sendFile(path.resolve(__dirname, 'build'))
 })
 
+server.get('/api', async(req, res) => {
+    const query = await db.select().table('animals');
+    // res.status(200);
+    // res.send(query);
+    res.send(query);
+    res.status(200)
+})
+
 const PORT = process.env.PORT || 4000;
-server.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
 
+(async () => {
+  try {
+    console.log("Running migrations");
+    await db.migrate.latest();
+    // await console.log("Running seeds");
+    // await seedDatabase();
 
-
-// (async () => {
-//   try {
-//     console.log("Running migrations");
-//       // await db.migrate.latest();
-//     // await console.log("Running seeds");
-//     // await seedDatabase();
-
-//     console.log("Starting express");
-//     server.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
-//   } catch (err) {
-//     console.error("Error starting app!", err);
-//     process.exit(-1);
-//   }
-// })();
+    console.log("Starting express");
+    server.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
+  } catch (err) {
+    console.error("Error starting app!", err);
+    process.exit(-1);
+  }
+})();
