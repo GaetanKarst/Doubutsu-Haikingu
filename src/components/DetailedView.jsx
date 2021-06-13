@@ -1,10 +1,9 @@
 import { PinDropSharp } from '@material-ui/icons';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PhotoDetails from './PhotoDetails';
 
 export default function DetailedView({ selectedPicture, setCurrentView }) {
     
-
     function displayPicture() {
         return (
             <img

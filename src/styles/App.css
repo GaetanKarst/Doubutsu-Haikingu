@@ -7,7 +7,7 @@ header {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: rgb(42, 221, 42);
   display: flex;
-  margin: auto;
+  flex-direction: row;
   justify-content: center;
 }
 
@@ -15,8 +15,14 @@ header {
   margin: auto;
 }
 
-h1.app-title {
-  margin: auto;
+#app-title {
+  align-items: center;
+}
+
+#user-name {
+  font-size: medium;
+  align-self: center;
+  
 }
 
 .collection-list {
