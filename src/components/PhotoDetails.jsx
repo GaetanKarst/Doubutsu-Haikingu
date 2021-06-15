@@ -10,13 +10,10 @@ export default function PhotoDetails({ setPhotoDetails }) {
                 placeholder={key}
                 onKeyDown={(e) => {
                     if (e.key === 'Enter') {
-                        //TODO: FIX the object passed
                         setPhotoDetails({ [key]: e.target.value });
                     }
                 }} />
         })
-            
-
     }
 
     return (

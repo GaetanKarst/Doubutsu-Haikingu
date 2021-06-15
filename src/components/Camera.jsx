@@ -5,19 +5,20 @@ import { IconButton } from '@material-ui/core';
 import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";
 
 
-export default function Camera(props) {
-
-    function iconClick() {
+export default function Camera({ addTakenPictureFile }) {
+    
+    function handleIconClick() {
         const cameraFileField = document.getElementById('camera-file');
         return cameraFileField.click();
     }
 
+    // Extracts taken picture from the camera 
     function getShot(event) {
-        try{
-            props.addTakenPictureFile(event.target.files[0]);
-            console.log('Picture taken!')
+        try {
+            addTakenPictureFile(event.target.files[0]);
+            console.log('Picture taken!');
         }
-        catch(e) {
+        catch (e) {
             console.error('Error at picture taken', e);
         }
     }
@@ -35,7 +36,7 @@ export default function Camera(props) {
                     />
                 </Box>
                 <label htmlFor="camera-file">
-                    <IconButton onClick={iconClick}>
+                    <IconButton onClick={handleIconClick}>
                         <PhotoCameraRoundedIcon id="camera-icon" />
                     </IconButton>
                 </label>

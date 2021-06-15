@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
 
-export default function Collection({ takenPictureFile, selectedImage }) {
-    const [base64s, setBase64s] = useState([]);
+export default function Collection({ takenPictureFile, selectedImage, base64s, setBase64s }) {
 
     useEffect(() =>{
-        console.log(takenPictureFile)
+        
+        // Updates collection page every time a picture is taken
         Promise.all(takenPictureFile.map( async(file) => {
-            const test = await getBase64(file);
-            return test;
+            const picture = await getBase64(file);
+            return picture;
          })).then(data => setBase64s(data));
 
-        // setBase64s(Promise.all(stringPromises));
     }, [takenPictureFile]); 
 
+    // Converts a single picture taken by the camera to string 64 to place it into the collection page
     function getBase64(file) {
+        if(!file) return;
+
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
             reader.readAsDataURL(file);
@@ -23,6 +25,9 @@ export default function Collection({ takenPictureFile, selectedImage }) {
             };
         });
     }
+
+    console.log('in collection', base64s)
+    console.log('TAKENPICTURE in collection', base64s)
 
     function renderPictures() {
         return base64s.map((photo, index) => {

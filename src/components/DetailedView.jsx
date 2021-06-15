@@ -1,18 +1,14 @@
-import { PinDropSharp } from '@material-ui/icons';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PhotoDetails from './PhotoDetails';
 
-export default function DetailedView({ selectedPicture, setCurrentView }) {
+export default function DetailedView({ selectedPicture, setCurrentView, base64s, setBase64s }) {
     const [details, setPhotoDetails] = useState({});
-
-    useEffect(() => {
-        console.log(details)
-    }, [details])
 
     function displayPicture() {
         return (
             <img
                 className="selected-picture"
+                id={selectedPicture}
                 src={selectedPicture}
                 alt="selected picture" />
         )
@@ -22,13 +18,12 @@ export default function DetailedView({ selectedPicture, setCurrentView }) {
         setCurrentView('Collection');
     }
 
-    function deletePhoto() {
-        //TODO: Implement the delete function
-        // selectedPicture = '';
+    function handleDeletePicture() {
+        const pictureToDelete = document.getElementById(selectedPicture);
+        base64s.splice(base64s.indexOf(selectedPicture), 1);
+        setCurrentView('Collection');
     }
 
-    //TODO: Make the location set automatically with the camera
-    //TODO: Make the button 'share' work for social media
     return (
         <>
         <button className="back-button" onClick={backToCollection}>Back</button>
@@ -40,7 +35,7 @@ export default function DetailedView({ selectedPicture, setCurrentView }) {
             <div className="button-container">
                 <button>Share</button>
                 <button
-                    onClick={deletePhoto}
+                    onClick={handleDeletePicture}
                     className="delete-button">
                     Delete
             </button>
