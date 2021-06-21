@@ -1,4 +1,4 @@
-# Doubutsu-Hikingu
+# Doubutsu-Haikingu
 
 <p align="center">
  <img width="200" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/285/owl_1f989.png" alt="Owl logo">
