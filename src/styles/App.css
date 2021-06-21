@@ -1,3 +1,8 @@
+.App { 
+  display: flex;
+  flex-direction: column;
+}
+
 .camera {
   display: flex;
   justify-content: center;
@@ -7,7 +12,6 @@ header {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: rgb(42, 221, 42);
   display: flex;
-  margin: auto;
   justify-content: center;
 }
 
@@ -25,17 +29,23 @@ h1.app-title {
   grid-auto-rows: 250px;
   gap: 1em;
   padding: 1em;
+  justify-content: center;
+  align-content: center;
 }
 
 .collection-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .collection-empty {
   display: flex;
   justify-content: center;
+  text-align: center;
+  margin-left: 1.2em;
+  margin-right: 1.2em;
 }
 
 .picture-of-animal {
@@ -45,6 +55,18 @@ h1.app-title {
 
 .selected-picture {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-picture-details { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  width: 25em;
 }
 
 .back-button {

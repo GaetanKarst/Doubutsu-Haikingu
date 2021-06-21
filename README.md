@@ -45,6 +45,12 @@ To run the server:
 - Express / Knex
 - Postgres
 
+## Screenshots
+
+![Screen Shot 2021-06-21 at 12 19 02](https://user-images.githubusercontent.com/66731438/122703046-b2623600-d28b-11eb-947e-810b9dd1805a.png)
+![Screen Shot 2021-06-21 at 12 24 32](https://user-images.githubusercontent.com/66731438/122703049-b42bf980-d28b-11eb-98a0-9c0f7a8374e0.png)
+![Screen Shot 2021-06-21 at 12 41 19](https://user-images.githubusercontent.com/66731438/122704125-fce4b200-d28d-11eb-81bf-32f3d52e4943.png)
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
@@ -56,4 +62,3 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-This project is licensed under the MIT License.
