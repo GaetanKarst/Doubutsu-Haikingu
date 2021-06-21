@@ -83,3 +83,8 @@ input {
   width: 15em;
   border-radius: 10%;
 }
+
+.delete-button { 
+  background-color: rgb(204, 65, 72);
+  font-weight: bold;
+}
