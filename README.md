@@ -38,7 +38,7 @@ To run the server:
 
 ```
     DATABASE_USER= // your database name
-    DATABASE_PW= // your database password
+    DATABASE_PW= // your database password 
 ```
 
 ## Built With
