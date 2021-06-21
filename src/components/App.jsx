@@ -24,12 +24,6 @@ export default function App() {
     setCurrentView('detailedView');
   }
 
-useEffect(() => {
-  setBase64s(base64s);
-}, [])
-
-console.log(base64s, '🦉')
-
   return (
     <>
       <div className="App">
@@ -44,7 +38,7 @@ console.log(base64s, '🦉')
           {currentView === 'Collection' ?
             takenPictureFile.length <= 0 ? <h2 className="collection-empty">🐺 Your collection is empty! Go on a hike! 🐻 </h2> :
               <Collection takenPictureFile={takenPictureFile} selectedImage={handleClickedOnImage} base64s={base64s} setBase64s={setBase64s} /> :
-            <DetailedView selectedPicture={selectedPicture} setCurrentView={setCurrentView} base64s={base64s} setBase64s={setBase64s}/>
+            <DetailedView selectedPicture={selectedPicture} setCurrentView={setCurrentView} base64s={base64s} setBase64s={setBase64s} takenPictureFile={takenPictureFile} setTakenPictureFile={setTakenPictureFile} />
           }
         </div>
       </div>
