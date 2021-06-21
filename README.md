@@ -1,5 +1,7 @@
 # Doubutsu-Hikingu
 
+![owl_1f989](https://user-images.githubusercontent.com/66731438/122704932-a8dacd00-d28f-11eb-9618-936d009648d2.png)
+
 _This application is my first MVP project made in 2 days and was developed during my time as student at Code Chrysalis._
 
 **Deployed project:** https://doubutsuhaikingu.herokuapp.com/
