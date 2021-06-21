@@ -51,10 +51,6 @@ To run the server:
 ![Screen Shot 2021-06-21 at 12 24 32](https://user-images.githubusercontent.com/66731438/122703049-b42bf980-d28b-11eb-98a0-9c0f7a8374e0.png)
 ![Screen Shot 2021-06-21 at 12 46 42](https://user-images.githubusercontent.com/66731438/122704462-c0658600-d28e-11eb-8ea3-3d9f3bb50160.png)
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Authors
 
 - **Gaetan Karst** - _Initial work_ - [GaetanKarst](https://github.com/GaetanKarst)
